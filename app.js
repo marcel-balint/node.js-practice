@@ -1,4 +1,5 @@
 const express = require("express");
+const { create } = require("lodash");
 
 //Express app
 const app = express();
@@ -14,6 +15,10 @@ app.get("/", (req, res) => {
 
 app.get("/about", (req, res) => {
   res.render("about");
+});
+
+app.get("/blogs/create", (req, res) => {
+  res.render("create");
 });
 
 //404 page
