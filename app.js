@@ -10,18 +10,36 @@ app.listen(3000);
 app.set("view engine", "ejs");
 
 app.get("/", (req, res) => {
-  res.render("index");
+  const blogs = [
+    {
+      title: "First blog",
+      snippet:
+        "Lorem, ipsum dolor sit amet consectetur adipisicing elit.Assumenda, provident!",
+    },
+    {
+      title: "Second blog",
+      snippet:
+        "Lorem, ipsum dolor sit amet consectetur adipisicing elit.Assumenda, provident!",
+    },
+    {
+      title: "Third blog",
+      snippet:
+        "Lorem, ipsum dolor sit amet consectetur adipisicing elit.Assumenda, provident!",
+    },
+  ];
+
+  res.render("index", { title: "Home", blogs });
 });
 
 app.get("/about", (req, res) => {
-  res.render("about");
+  res.render("about", { title: "About" });
 });
 
 app.get("/blogs/create", (req, res) => {
-  res.render("create");
+  res.render("create", { title: "Create a new Blog" });
 });
 
 //404 page
 app.use((req, res) => {
-  res.status(404).render("404");
+  res.status(404).render("404", { title: "Not Found" });
 });
