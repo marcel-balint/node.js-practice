@@ -1,15 +1,25 @@
 const express = require("express");
-const { create } = require("lodash");
+const mongoose = require("mongoose");
+const _ = require("lodash");
 
 //Express app
 const app = express();
 
-//Listen for requests
-app.listen(3000);
+//Connection to MongoDB
+const dbURI =
+  "mongodb+srv://marcel:test1234@cluster0.he6qebu.mongodb.net/node-app?retryWrites=true&w=majority";
+
+mongoose
+  .connect(dbURI, { useNewUrlParser: true, useUnifiedTopology: true })
+  .then((result) => app.listen(3000))
+  .catch((err) => console.log(err));
+
 //Register view engine
 app.set("view engine", "ejs");
 
 app.get("/", (req, res) => {
+  const random = _.random(1, 50);
+  const currentYear = new Date().getFullYear();
   const blogs = [
     {
       title: "First blog",
@@ -28,7 +38,7 @@ app.get("/", (req, res) => {
     },
   ];
 
-  res.render("index", { title: "Home", blogs });
+  res.render("index", { title: "Home", blogs, currentYear, random });
 });
 
 app.get("/about", (req, res) => {
