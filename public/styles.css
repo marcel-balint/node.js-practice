@@ -53,6 +53,12 @@ h3{
   text-transform: capitalize;
   margin-bottom: 8px;
 }
+.blog-card{
+  margin-top: 20px;
+  margin-bottom: 10px;
+  background-color: #eee;
+  padding: 5px;
+}
 .content{
   margin-left: 20px;
 }

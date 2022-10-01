@@ -41,6 +41,14 @@ app.get("/", (req, res) => {
     .catch((err) => console.log(err));
 });
 
+app.post("/blogs", (req, res) => {
+  const blog = new Blog(req.body);
+  blog
+    .save()
+    .then((result) => res.redirect("/"))
+    .catch((err) => console.log(err));
+});
+
 app.get("/about", (req, res) => {
   res.render("about", { title: "About" });
 });

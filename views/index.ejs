@@ -12,17 +12,23 @@
 
                         <% if (blogs.length> 0){ %>
                             <% blogs.forEach(blog=> { %>
-                                <h3 class="title"><%= blog.title %></h3>
-                                    <span><%=blog.createdAt
-                                            %></span>
-                                        <p class="snippet"><%= blog.snippet %></p>
-                                            <% })%>
-                                                <% } else { %>
-                                                    <p>No blogs to display...</p>
-                                                    <% } %>
-                                                    </div>
-                                                    <%-
-                                                        include('./partials/footer.ejs')%>
-                                                        <%= currentYear%>
-                                                        </body>
-                                                    </html>
+                                <div class="blog-card">
+                                    <h3 class="title"><%= blog.title %></h3>
+                                        <span><%=blog.createdAt
+                                                %></span>
+                                            <p class="snippet"><strong><%=
+                                                        blog.snippet %></strong></p>
+                                                <p class="snippet"><%= blog.body
+                                                        %></p>
+                                                </div>
+                                                <% })%>
+                                                    <% } else { %>
+                                                        <p>No blogs to
+                                                            display...</p>
+                                                        <% } %>
+                                                        </div>
+                                                        <%-
+                                                            include('./partials/footer.ejs')%>
+                                                            <%= currentYear%>
+                                                            </body>
+                                                        </html>
