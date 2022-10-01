@@ -13,13 +13,16 @@
                         <% if (blogs.length> 0){ %>
                             <% blogs.forEach(blog=> { %>
                                 <h3 class="title"><%= blog.title %></h3>
-                                    <p class="snippet"><%= blog.snippet %></p>
-                                        <% })%>
-                                            <% } else { %>
-                                                <p>No blogs to display...</p>
-                                                <% } %>
-                                                </div>
-                                                <%-
-                                                    include('./partials/footer.ejs')%>
-                                                </body>
-                                            </html>
+                                    <span><%=blog.createdAt
+                                            %></span>
+                                        <p class="snippet"><%= blog.snippet %></p>
+                                            <% })%>
+                                                <% } else { %>
+                                                    <p>No blogs to display...</p>
+                                                    <% } %>
+                                                    </div>
+                                                    <%-
+                                                        include('./partials/footer.ejs')%>
+                                                        <%= currentYear%>
+                                                        </body>
+                                                    </html>
