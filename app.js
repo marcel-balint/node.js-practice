@@ -1,8 +1,7 @@
 const express = require("express");
 const mongoose = require("mongoose");
-const _ = require("lodash");
-const Blog = require("./models/blog");
 const blogRoutes = require("./routes/blogRoutes");
+const blogController = require("./controllers/blogController");
 
 //Express app
 const app = express();
@@ -23,25 +22,7 @@ app.set("view engine", "ejs");
 app.use(express.urlencoded({ extended: true }));
 app.use(express.static("public"));
 
-const currentYear = new Date().getFullYear();
-
-app.get("/", (req, res) => {
-  const random = _.random(1, 12);
-
-  Blog.find()
-    .sort({ createdAt: -1 })
-    .then((result) => {
-      //console.log(result[0].createdAt);
-      res.render("index", {
-        title: "Home",
-        blogs: result,
-        currentYear,
-        random,
-      });
-    })
-    .catch((err) => console.log(err));
-});
-
+app.get("/", blogController.blog_index);
 app.get("/about", (req, res) => {
   res.render("about", { title: "About" });
 });
