@@ -2,6 +2,7 @@ const express = require("express");
 const mongoose = require("mongoose");
 const _ = require("lodash");
 const Blog = require("./models/blog");
+const { render } = require("ejs");
 
 //Express app
 const app = express();
@@ -49,12 +50,26 @@ app.post("/blogs", (req, res) => {
     .catch((err) => console.log(err));
 });
 
-app.get("/about", (req, res) => {
-  res.render("about", { title: "About" });
-});
-
 app.get("/blogs/create", (req, res) => {
   res.render("create", { title: "Create a new Blog" });
+});
+
+app.get("/blogs/:id", (req, res) => {
+  const id = req.params.id;
+  Blog.findById(id).then((result) => {
+    res.render("details", { blog: result, title: "Blog Details" });
+  });
+});
+
+app.delete("/blogs/:id", (req, res) => {
+  const id = req.params.id;
+  Blog.findByIdAndDelete(id)
+    .then((result) => res.json({ redirect: "/" }))
+    .catch((err) => console.log(err));
+});
+
+app.get("/about", (req, res) => {
+  res.render("about", { title: "About" });
 });
 
 //404 page

@@ -13,13 +13,17 @@
                         <% if (blogs.length> 0){ %>
                             <% blogs.forEach(blog=> { %>
                                 <div class="blog-card">
-                                    <h3 class="title"><%= blog.title %></h3>
-                                        <span><%=blog.createdAt
-                                                %></span>
-                                            <p class="snippet"><strong><%=
-                                                        blog.snippet %></strong></p>
-                                                <p class="snippet"><%= blog.body
-                                                        %></p>
+                                    <a class="single" href="/blogs/<%= blog._id
+                                        %>"
+                                        <h3 class="title"><%= blog.title %></h3>
+                                            <span><small><%=blog.createdAt
+                                                        %></small></span>
+                                                <p class="snippet"><strong><%=
+                                                            blog.snippet %></strong></p>
+                                                    <p class="snippet"><%=
+                                                            blog.body
+                                                            %></p>
+                                                    </a>
                                                 </div>
                                                 <% })%>
                                                     <% } else { %>
@@ -29,6 +33,7 @@
                                                         </div>
                                                         <%-
                                                             include('./partials/footer.ejs')%>
-                                                            <%= currentYear%>
+                                                            <%=
+                                                                currentYear%>
                                                             </body>
                                                         </html>
