@@ -2,7 +2,7 @@ const express = require("express");
 const mongoose = require("mongoose");
 const _ = require("lodash");
 const Blog = require("./models/blog");
-const { render } = require("ejs");
+const blogRoutes = require("./routes/blogRoutes");
 
 //Express app
 const app = express();
@@ -42,35 +42,12 @@ app.get("/", (req, res) => {
     .catch((err) => console.log(err));
 });
 
-app.post("/blogs", (req, res) => {
-  const blog = new Blog(req.body);
-  blog
-    .save()
-    .then((result) => res.redirect("/"))
-    .catch((err) => console.log(err));
-});
-
-app.get("/blogs/create", (req, res) => {
-  res.render("create", { title: "Create a new Blog" });
-});
-
-app.get("/blogs/:id", (req, res) => {
-  const id = req.params.id;
-  Blog.findById(id).then((result) => {
-    res.render("details", { blog: result, title: "Blog Details" });
-  });
-});
-
-app.delete("/blogs/:id", (req, res) => {
-  const id = req.params.id;
-  Blog.findByIdAndDelete(id)
-    .then((result) => res.json({ redirect: "/" }))
-    .catch((err) => console.log(err));
-});
-
 app.get("/about", (req, res) => {
   res.render("about", { title: "About" });
 });
+
+//blog routes
+app.use("/blogs", blogRoutes);
 
 //404 page
 app.use((req, res) => {
