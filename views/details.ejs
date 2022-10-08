@@ -1,7 +1,7 @@
 <html lang="en">
     <%- include('./partials/head.ejs')%>
         <body>
-            <div class="conatainer">
+            <div class="container">
                 <%- include('./partials/nav.ejs') %>
 
                     <div class="details content">
@@ -14,7 +14,12 @@
                             </div>
                         </div>
                         <%- include('./partials/footer.ejs') %>
-                            <script>
+                            <p
+                                class="current-year">
+                                <%=
+                                    currentYear%>
+                                </p>
+                                <script>
                            const deleteBtn = document.querySelector('a.delete');
                             
                             deleteBtn.addEventListener('click', (e) => {
@@ -27,5 +32,5 @@
                             })
                         
                           </script>
-                        </body>
-                    </html>
+                            </body>
+                        </html>

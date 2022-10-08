@@ -70,6 +70,7 @@ nav p, nav a{
 .current-year {
   text-align: center;
 }
+
 h2{
   margin-bottom: 30px;
 }
@@ -77,6 +78,7 @@ h3{
   text-transform: capitalize;
   margin-bottom: 8px;
 }
+/* index styles */
 .blog-card{
   margin-top: 20px;
   margin-bottom: 10px;
@@ -86,12 +88,15 @@ h3{
 .content{
   width: 100%;
 }
+.content p {
+  padding: 10px;
+}
 .no-blogs-msg {
   text-align: center;
   font-size: large;
   font-family: inherit;
 }
-/* index styles */
+
 .blogs a{
   display: block;
   margin: 40px 0;
@@ -131,9 +136,39 @@ h3{
 .create-container {
   margin-top: 10%;
 }
+
+.time-creation {
+  display: flex;
+  margin-top: 10px;
+  margin-bottom: 20px;
+}
+.create-blog button{
+  padding:8px 12px;
+  margin:8px 0 0;
+  font-family:'Montserrat',sans-serif;
+  border:2px solid #78788c;
+  background:0;
+  color:#5a5a6e;
+  cursor:pointer;
+  font-size: 14px;
+  transition:all .3s
+
+}
+.create-blog button:hover{
+  background:#78788c;
+  color:#fff
+}
+
+/*  form styles */
 .create-blog form{
   max-width: 400px;
   margin: 0 auto;
+  font-family: sans-serif;
+}
+::placeholder {
+  font-style: italic;
+  opacity: .7;
+  color:#777;
 }
 .create-blog input,
 .create-blog textarea{
@@ -141,6 +176,11 @@ h3{
   width: 100%;
   margin: 10px 0;
   padding: 8px;
+  border: 0;
+  outline: none;
+  border-bottom: 2px solid #bebed2;
+  color:#777;
+  font-size: 16px;
 }
 .create-blog label{
   display: block;
@@ -149,22 +189,13 @@ h3{
 textarea{
   height: 120px;
 }
-.time-creation {
-  display: flex;
-  margin-top: 10px;
-  margin-bottom: 20px;
-}
-.create-blog button{
-  margin-top: 20px;
-  background: crimson;
-  color: white;
-  padding: 6px;
-  border: 0;
-  font-size: 1.2em;
-  cursor: pointer;
-}
-/*  about styles */
 
+
+
+/*  about styles */
+.about {
+  margin-top: 5%;
+}
 .last-para {
   margin-top: 30px;
 }

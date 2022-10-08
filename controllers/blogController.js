@@ -1,9 +1,10 @@
 const _ = require("lodash");
 const Blog = require("../models/blog");
 
+const currentYear = new Date().getFullYear();
+
 const blog_index = (req, res) => {
   const random = _.random(1, 12);
-  const currentYear = new Date().getFullYear();
 
   Blog.find()
     .sort({ createdAt: -1 })
@@ -22,12 +23,21 @@ const blog_index = (req, res) => {
 const blog_details = (req, res) => {
   const id = req.params.id;
   Blog.findById(id).then((result) => {
-    res.render("details", { blog: result, title: "Blog Details" });
+    res.render("details", {
+      blog: result,
+      currentYear,
+      title: "Blog Details",
+      page: "details",
+    });
   });
 };
 
 const blog_create_get = (req, res) => {
-  res.render("create", { title: "Create a new Blog", page: "create" });
+  res.render("create", {
+    title: "Create a new Blog",
+    page: "create",
+    currentYear,
+  });
 };
 
 const blog_create_post = (req, res) => {

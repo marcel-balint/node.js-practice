@@ -24,7 +24,8 @@ app.use(express.static("public"));
 
 app.get("/", blogController.blog_index);
 app.get("/about", (req, res) => {
-  res.render("about", { title: "About", page: "about" });
+  const currentYear = new Date().getFullYear();
+  res.render("about", { title: "About", page: "about", currentYear });
 });
 
 //blog routes
