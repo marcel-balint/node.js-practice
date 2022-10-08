@@ -1,11 +1,14 @@
 <nav>
     <div class="site-title">
-        <a href="/"><h1>Blog</h1></a>
-        <p>Blogger</p>
+        <a href="/"><h1>Blogger</h1></a>
+
     </div>
     <ul>
-        <li><a href="/">Blogs</a></li>
-        <li><a href="/about">About</a></li>
-        <li><a href="/blogs/create">New Blog</a></li>
-    </ul>
-</nav>
+        <li><a <% if (page === 'home') { %> class='current' <% } %> href="/">Blogs</a></li>
+            <li><a <% if (page === 'about') { %> class='current' <% } %>
+                        href="/about">About</a></li>
+
+                <li class="new-blog-link"><a <% if (page === 'create') { %>
+                        class='current' <% } %> href="/blogs/create">New Blog</a></li>
+                </ul>
+            </nav>

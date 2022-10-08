@@ -3,32 +3,35 @@
     <%- include('./partials/head.ejs')%>
 
         <body>
+            <div class="container">
 
-            <%- include('./partials/nav.ejs')%>
-                <div class="blogs content">
-                    <h2>All Blogs</h2>
+                <%- include('./partials/nav.ejs')%>
+                    <div class="blogs content">
+                        <h2>All Blogs</h2>
 
-                    <p>Random number: <%= random %></p>
+                        <p>Random number: <%= random %></p>
 
-                        <% if (blogs.length> 0){ %>
-                            <% blogs.forEach(blog=> { %>
-                                <div class="blog-card">
-                                    <a class="single" href="/blogs/<%= blog._id
-                                        %>"
-                                        <h3 class="title"><%= blog.title %></h3>
-                                            <span class="time-creation"><small><%=blog.createdAt
-                                                        %></small></span>
-                                                <p class="snippet"><strong><%=
-                                                            blog.snippet %></strong></p>
-                                                </a>
-                                            </div>
-                                            <% })%>
-                                                <% } else { %>
-                                                    <p class="no-blogs-msg">No
-                                                        blogs
-                                                        to
-                                                        display...</p>
-                                                    <% } %>
+                            <% if (blogs.length> 0){ %>
+                                <% blogs.forEach(blog=> { %>
+                                    <div class="blog-card">
+                                        <a class="single" href="/blogs/<%=
+                                            blog._id
+                                            %>"
+                                            <h3 class="title"><%= blog.title %></h3>
+                                                <span class="time-creation"><small><%=blog.createdAt
+                                                            %></small></span>
+                                                    <p class="snippet"><strong><%=
+                                                                blog.snippet %></strong></p>
+                                                    </a>
+                                                </div>
+                                                <% })%>
+                                                    <% } else { %>
+                                                        <p class="no-blogs-msg">No
+                                                            blogs
+                                                            to
+                                                            display...</p>
+                                                        <% } %>
+                                                        </div>
                                                     </div>
                                                     <%-
                                                         include('./partials/footer.ejs')%>

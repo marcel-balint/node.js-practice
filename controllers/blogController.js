@@ -10,6 +10,7 @@ const blog_index = (req, res) => {
     .then((result) => {
       res.render("index", {
         title: "Home",
+        page: "home",
         blogs: result,
         currentYear,
         random,
@@ -26,7 +27,7 @@ const blog_details = (req, res) => {
 };
 
 const blog_create_get = (req, res) => {
-  res.render("create", { title: "Create a new Blog" });
+  res.render("create", { title: "Create a new Blog", page: "create" });
 };
 
 const blog_create_post = (req, res) => {
