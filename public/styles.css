@@ -32,7 +32,7 @@ nav li{
   margin-left: 20px;
 }
 nav a:hover {
-    color: aqua;
+    color: #ccc;
 }
 nav h1{
   font-size: 3em;
@@ -44,10 +44,13 @@ nav p, nav a{
 footer{
   color: #777;
   text-align: center;
-  margin: 80px auto 20px;
+  margin: 80px auto 0px;
+}
+.current-year {
+  text-align: center;
 }
 h2{
-  margin-bottom: 40px;
+  margin-bottom: 30px;
 }
 h3{
   text-transform: capitalize;
@@ -61,6 +64,12 @@ h3{
 }
 .content{
   margin-left: 20px;
+  padding-bottom: 10px;
+}
+.no-blogs-msg {
+  text-align: center;
+  font-size: large;
+  font-family: inherit;
 }
 /* index styles */
 .blogs a{
@@ -76,6 +85,11 @@ h3{
 /* details styles */
 .details{
   position: relative;
+  background-color: #eee;
+}
+.blog-title-details {
+  text-align: center;
+  padding-top: 10px;
 }
 .delete{
   position: absolute;
@@ -83,10 +97,14 @@ h3{
   right: 0;
   border-radius: 50%;
   padding: 8px;
+  text-transform: uppercase;
+  font-weight: bold;
+  font-size: 14px;
 }
 .delete:hover{
   cursor: pointer;
   box-shadow: 1px 2px 3px rgba(0,0,0,0.2);
+  color: rgb(192, 148, 148);
 }
 
 /* create styles */
@@ -107,6 +125,11 @@ h3{
 }
 textarea{
   height: 120px;
+}
+.time-creation {
+  display: flex;
+  margin-top: 10px;
+  margin-bottom: 20px;
 }
 .create-blog button{
   margin-top: 20px;

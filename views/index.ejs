@@ -16,24 +16,26 @@
                                     <a class="single" href="/blogs/<%= blog._id
                                         %>"
                                         <h3 class="title"><%= blog.title %></h3>
-                                            <span><small><%=blog.createdAt
+                                            <span class="time-creation"><small><%=blog.createdAt
                                                         %></small></span>
                                                 <p class="snippet"><strong><%=
                                                             blog.snippet %></strong></p>
-                                                    <p class="snippet"><%=
-                                                            blog.body
-                                                            %></p>
-                                                    </a>
-                                                </div>
-                                                <% })%>
-                                                    <% } else { %>
-                                                        <p>No blogs to
-                                                            display...</p>
-                                                        <% } %>
-                                                        </div>
-                                                        <%-
-                                                            include('./partials/footer.ejs')%>
+                                                </a>
+                                            </div>
+                                            <% })%>
+                                                <% } else { %>
+                                                    <p class="no-blogs-msg">No
+                                                        blogs
+                                                        to
+                                                        display...</p>
+                                                    <% } %>
+                                                    </div>
+                                                    <%-
+                                                        include('./partials/footer.ejs')%>
+                                                        <p
+                                                            class="current-year">
                                                             <%=
                                                                 currentYear%>
-                                                            </body>
-                                                        </html>
+                                                            </p>
+                                                        </body>
+                                                    </html>
