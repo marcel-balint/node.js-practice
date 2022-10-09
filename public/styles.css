@@ -340,7 +340,16 @@ textarea{
   padding: 6px;
   cursor: pointer;
 }
-
+#name {
+  width: 30%;
+  font-size: 1rem;
+  line-height: 1.5em;
+  font-family: 'Roboto';
+  margin-top: 10px;
+  padding: 2px;
+  border: 2px solid #bebed2;
+  outline: none;
+}
 .comment-form textarea {
   font-size: 1rem;
   line-height: 1.5em;
@@ -349,6 +358,32 @@ textarea{
   border: 2px solid #bebed2;
   outline: none;
 }
+
+.comment-top {
+  display: flex;
+  justify-content: space-between;
+  border: 1px solid #b5b5b5;
+  padding: 2px;
+}
+.comment-top:first-child {
+  padding-left: 10px;
+}
+.comment-top:nth-child(1) {
+  padding-right: 10px;
+
+}
+.commnet-body-text {
+  border-left:1px solid #b5b5b5;
+  border-right: 1px solid #b5b5b5;
+  border-bottom:1px solid #b5b5b5;
+  background-color: #fff;
+  padding: 10px 5px 10px 5px;
+}
+
+.comments-cards {
+  margin-top: 60px;
+}
+
 
 /* footer styles */
 hr {

@@ -23,17 +23,56 @@
                                     <p><%= blog.body%></p>
                                     </div>
                                 </div>
+                                <!-----   Comment section  ----->
                                 <div class="comment-container">
                                     <div class="comment-create">
                                         <form class="comment-form"
-                                            action="/blogs" method="POST">
+                                            action="/comments" method="POST">
                                             <textarea
+                                                required
                                                 placeholder="Comment here..."
                                                 name="comment"
                                                 id="comment"
                                                 cols="30" rows="30"></textarea>
+                                            <input type="text" name="name"
+                                                required
+                                                placeholder="Type your name"
+                                                id="name">
                                             <button class="comment-btn">Comment</button>
                                         </form>
+                                        <div class="comments-cards">
+                                            <div class="comment-card">
+                                                <div class="comment-top">
+                                                    <span>By:</span>
+                                                    <span>At:7638768</span>
+                                                </div>
+                                                <div class="commnet-body-text">
+                                                    <p>Lorem ipsum dolor sit
+                                                        amet consectetur,
+                                                        adipisicing elit. Nemo
+                                                        aut expedita vero,
+                                                        explicabo ea voluptatum?
+                                                        At nihil dolore error
+                                                        eaque excepturi ut nulla
+                                                        itaque. Voluptatum
+                                                        temporibus harum
+                                                        delectus provident enim
+                                                        eius optio porro
+                                                        corporis architecto
+                                                        maiores nihil expedita
+                                                        asperiores eligendi
+                                                        excepturi culpa fuga,
+                                                        aspernatur fugiat
+                                                        praesentium debitis
+                                                        numquam eum suscipit
+                                                        autem voluptates dicta.
+                                                        Aperiam atque laborum,
+                                                        reiciendis ducimus
+                                                        labore modi?
+                                                    </p>
+                                                </div>
+                                            </div>
+                                        </div>
                                     </div>
                                     <div class="comment-card">
                                     </div>
