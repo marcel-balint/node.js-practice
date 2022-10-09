@@ -137,6 +137,7 @@ h3{
 .back-text {
   padding-left: 20px;
   font-weight: bolder;
+  font-size: 14px;
 }
 
 .details{
@@ -184,6 +185,10 @@ h3{
   margin-top: 5%;
 }
 
+.create-container h2 {
+  margin-top: -50px;
+  margin-bottom: 5px;
+}
 .time-creation {
   display: flex;
   margin-top: 10px;

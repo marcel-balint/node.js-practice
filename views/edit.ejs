@@ -7,32 +7,41 @@
                 <%- include('./partials/nav.ejs')%>
                     <div class="create-container">
                         <h2>Edit blog</h2>
-                        <div class="create-blog content">
-                            <form action="/blogs" method="POST">
-                                <label for="title">Blog title:</label>
-                                <input type="text" id="title" name="title"
-                                    value="<%= blog.title %>"
-                                placeholder="Write your title here..."
-                                required>
-                                <label for="snippet">Blog snippet:</label>
-                                <input type="text" id="snippet"
-                                    name="snippet"
-                                    value="<%= blog.snippet %>"
-                                placeholder="Blog sippet..." required>
-                                <label for="body">Blog body:</label>
-                                <textarea id="body" name="body"
-                                    placeholder="Write the blog text..."
-                                    required> <%= blog.title %></textarea>
-                                    <button>Save</button>
-                                </form>
+                        <div class="back-link">
+                            <a href="/blogs/<%=
+                                blog._id
+                                %>">
+                                <span class="back-first"><</span><span
+                                        class="back-second"></span>
+                                </a>
+                                <small class="back-text">Back to overview</small>
+                            </div>
+                            <div class="create-blog content">
+                                <form action="/blogs" method="POST">
+                                    <label for="title">Blog title:</label>
+                                    <input type="text" id="title" name="title"
+                                        value="<%= blog.title %>"
+                                    placeholder="Write your title here..."
+                                    required>
+                                    <label for="snippet">Blog snippet:</label>
+                                    <input type="text" id="snippet"
+                                        name="snippet"
+                                        value="<%= blog.snippet %>"
+                                    placeholder="Blog sippet..." required>
+                                    <label for="body">Blog body:</label>
+                                    <textarea id="body" name="body"
+                                        placeholder="Write the blog text..."
+                                        required> <%= blog.title %></textarea>
+                                        <button>Save</button>
+                                    </form>
+                                </div>
                             </div>
                         </div>
-                    </div>
-                    <%- include('./partials/footer.ejs')%>
-                        <p
-                            class="current-year">
-                            <%=
-                                currentYear%>
-                            </p>
-                        </body>
-                    </html>
+                        <%- include('./partials/footer.ejs')%>
+                            <p
+                                class="current-year">
+                                <%=
+                                    currentYear%>
+                                </p>
+                            </body>
+                        </html>
