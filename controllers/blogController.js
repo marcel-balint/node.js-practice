@@ -3,6 +3,18 @@ const Blog = require("../models/blog");
 
 const currentYear = new Date().getFullYear();
 
+const blog_edit = (req, res) => {
+  const id = req.params.id;
+  Blog.findById(id).then((result) => {
+    res.render("edit", {
+      blog: result,
+      currentYear,
+      title: "Edit",
+      page: "edit",
+    });
+  });
+};
+
 const blog_index = (req, res) => {
   const random = _.random(1, 12);
 
@@ -23,6 +35,7 @@ const blog_index = (req, res) => {
 const blog_details = (req, res) => {
   const id = req.params.id;
   Blog.findById(id).then((result) => {
+    console.log(result.createdAt.getFullYear());
     res.render("details", {
       blog: result,
       currentYear,
@@ -61,4 +74,5 @@ module.exports = {
   blog_create_get,
   blog_create_post,
   blog_delete,
+  blog_edit,
 };
