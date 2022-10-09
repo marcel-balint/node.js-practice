@@ -22,7 +22,21 @@
                                     </div>
                                     <p><%= blog.body%></p>
                                     </div>
-
+                                </div>
+                                <div class="comment-container">
+                                    <div class="comment-create">
+                                        <form class="comment-form"
+                                            action="/blogs" method="POST">
+                                            <textarea
+                                                placeholder="Comment here..."
+                                                name="comment"
+                                                id="comment"
+                                                cols="30" rows="30"></textarea>
+                                            <button class="comment-btn">Comment</button>
+                                        </form>
+                                    </div>
+                                    <div class="comment-card">
+                                    </div>
                                 </div>
                             </div>
                             <!-----   Modal  ----->

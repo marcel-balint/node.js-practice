@@ -321,6 +321,35 @@ textarea{
   cursor: pointer;
 }
 
+
+/* comment section styles */
+
+.comment-container {
+  margin-top: 60px;
+  margin-bottom: 60px;
+}
+.comment-form {
+  display: flex;
+  flex-direction: column;
+  width: 70%;
+}
+
+.comment-btn {
+  width: 140px;
+  margin-top: 20px;
+  padding: 6px;
+  cursor: pointer;
+}
+
+.comment-form textarea {
+  font-size: 1rem;
+  line-height: 1.5em;
+  font-family: 'Roboto';
+  padding: 5px;
+  border: 2px solid #bebed2;
+  outline: none;
+}
+
 /* footer styles */
 hr {
   width: 30%;
