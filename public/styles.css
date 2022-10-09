@@ -112,6 +112,33 @@ h3{
 }
 
 /* details styles */
+.back-link{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  position: relative;
+}
+
+.back-second {
+  position: absolute;
+  top: 23px;
+  left: 6px;
+  background-color: #000;
+  width: 27px;
+  height: 3px;
+  cursor: pointer;
+}
+
+.back-first {
+  font-size: 35px;
+  cursor: pointer;
+}
+
+.back-text {
+  padding-left: 20px;
+  font-weight: bolder;
+}
+
 .details{
   position: relative;
   background-color: #eee;
